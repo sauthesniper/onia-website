@@ -41,6 +41,7 @@ export default function Footer() {
                   Resurse
                 </a>
               </li>
+              {/* TEST CI */}
               <li>
                 <a href="/calendar" className="text-gray-300 hover:text-blue-200 transition-colors">
                   Calendar
