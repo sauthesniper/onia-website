@@ -1,0 +1,16 @@
+{
+  "name": "Olimpiada Națională de Inteligență Artificială",
+  "short_name": "ROAI",
+  "description": "Olimpiada Națională de Inteligență Artificială (ROAI) - Competiție educațională de excelență",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "/logos/roai.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animație Matrice</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(40, 0.5em);
+            grid-template-rows: repeat(25, 0.5em);
+            gap: 2px;
+        }
+
+        .square {
+            width: 0.5em;
+            height: 0.5em;
+            background-color: #5b21b6;
+            opacity: 0.4;
+            transition: all 0.3s ease;
+        }
+
+        .square.splash {
+            background-color: #a78bfa;
+            transform: scale(0.6);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="matrix"></div>
+
+    <script>
+        const matrix = document.getElementById('matrix');
+        const rows = 25;
+        const cols = 40;
+        const total = rows * cols;
+        const squares = new Array(total);
+        
+        // Create all squares at once
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < total; i++) {
+            const square = document.createElement('div');
+            square.className = 'square';
+            square.dataset.index = i;
+            fragment.appendChild(square);
+            squares[i] = square;
+        }
+        matrix.appendChild(fragment);
+
+        // Ripple effect limited to nearby squares
+        matrix.addEventListener('mouseover', (e) => {
+            if (!e.target.classList.contains('square')) return;
+            
+            const index = parseInt(e.target.dataset.index);
+            const row = Math.floor(index / cols);
+            const col = index % cols;
+            
+            const maxRadius = 2; // Limitează raza efectului
+            
+            // Calculate distance from hover point to nearby squares only
+            squares.forEach((square, idx) => {
+                const targetRow = Math.floor(idx / cols);
+                const targetCol = idx % cols;
+                const distance = Math.sqrt(Math.pow(targetRow - row, 2) + Math.pow(targetCol - col, 2));
+                
+                // Only affect squares within radius
+                if (distance <= maxRadius) {
+                    // Delay reduced for faster spread
+                    const delay = distance * 15;
+                    
+                    setTimeout(() => {
+                        square.classList.add('splash');
+                        setTimeout(() => {
+                            square.classList.remove('splash');
+                        }, 300);
+                    }, delay);
+                }
+            });
+        }, { passive: true });
+    </script>
+</body>
+</html>
