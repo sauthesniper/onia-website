@@ -98,4 +98,4 @@ export default function MatrixRain() {
       style={{ opacity: 0.6 }}
     />
   );
-}
+} 

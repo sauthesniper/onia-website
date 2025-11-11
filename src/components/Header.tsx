@@ -42,7 +42,7 @@ export default function Header() {
           {/* Logo and Title */}
           <Link href="/" className="flex items-center space-x-4 py-2 group">
             <Image
-              src="/logos/roai-white.svg"
+              src="/logos/roai-fullwhite.svg"
               alt="ROAI Logo"
               width={60}
               height={60}
