@@ -71,7 +71,7 @@ export default function Header() {
             
             {/* CTA Button */}
             <a
-              href="https://eval.olimpiada-ai.ro"
+              href="https://platform.olimpiada-ai.ro"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 flex items-center gap-2 px-4 py-2 bg-linear-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-lg hover:from-yellow-300 hover:to-orange-400 transition-all shadow-lg hover:shadow-xl transform "
