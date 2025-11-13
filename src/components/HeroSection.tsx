@@ -26,10 +26,10 @@ export default function HeroSection() {
             <br />
             de Inteligență Artificială
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100 drop-shadow-md">
+          {/* <p className="text-xl md:text-2xl mb-8 text-blue-100 drop-shadow-md">
             Informațiile pentru ediția din anul școlar 2025-2026 și platforma de concurs{" "}
             <strong>vor fi disponibile curând</strong>.
-          </p>
+          </p> */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://platform.olimpiada-ai.ro"
